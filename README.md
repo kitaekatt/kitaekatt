@@ -2,11 +2,13 @@
 
 **AI/ML contributor** focused on LLM inference optimization and tooling. Active contributor to [vLLM](https://github.com/vllm-project/vllm) and [Hugging Face Transformers](https://github.com/huggingface/transformers).
 
-Previously: Founder of Elodie Games | Design Lead at Riot Games (League of Legends, Wild Rift) | BioWare (Mass Effect 1-3)
+**Background:** 20+ years in games — Lead Combat Designer on Mass Effect 1-3 at BioWare, Design Lead at Riot Games (League of Legends, Wild Rift), Founder of Elodie Games.
 
 ## Current Focus
 
 Building and improving LLM infrastructure—particularly GGUF model support, memory optimization, and inference performance for next-gen hardware like NVIDIA Blackwell.
+
+Also exploring AI-assisted game development workflows, combining game design expertise with modern AI tooling.
 
 ## Open Source Contributions
 
@@ -45,5 +47,10 @@ Active contributor to Anthropic's Claude Code CLI—filing feature requests and 
 
 ## Connect
 
+- **LinkedIn:** [therealchristina](https://www.linkedin.com/in/therealchristina/)
 - **X/Twitter:** [@truffle](https://x.com/truffle)
 - **Location:** Austin, Texas
+
+---
+
+<sub>University of Waterloo · Mass Effect · League of Legends · Wild Rift · AI/ML · LLM Inference</sub>
