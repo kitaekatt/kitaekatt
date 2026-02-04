@@ -26,7 +26,7 @@ Any active PreToolUse hook caused the user's selection to be silently dropped. F
 
 ### Hugging Face Transformers
 
-**Draft:**
+**In Progress:**
 1. [#42881](https://github.com/huggingface/transformers/pull/42881) — Add attn_logit_softcapping to Gemma2/Gemma3 GGUF config mapping.
 Gemma2 and Gemma3 GGUF models lost their attention softcapping parameter during loading — Transformers' GGUF loader didn't map the `attention.logit_softcapping` field from GGUF metadata to the HuggingFace config attribute. Without it, models used the default value, degrading output quality. Fix adds the mapping for both architectures. This is the upstream fix for the vLLM workaround in [#30427](https://github.com/vllm-project/vllm/pull/30427).
 
@@ -55,7 +55,7 @@ GGUF loading failed with `RuntimeError: Failed to map GGUF parameters: ['lm_head
 7. [#30434](https://github.com/vllm-project/vllm/pull/30434) — Use EOS token ID from GGUF metadata instead of HF tokenizer.
 Gemma 3 GGUF models never stopped generating — the model emitted \<end_of_turn\> (token 106) but vLLM waited for the HF tokenizer's EOS (token 1), resulting in repeated EOS tokens until max_tokens. Fix reads the correct EOS from GGUF metadata.
 
-**Draft:**
+**In Progress:**
 8. [#30411](https://github.com/vllm-project/vllm/pull/30411) — Ensure Gemma2 configs have hidden_act for backward compatibility.
 Gemma2 GGUF loading hit `AttributeError: 'Gemma2Config' has no attribute 'hidden_act'` because Transformers uses `hidden_activation` while vLLM accesses `hidden_act` directly. Fix copies the value across.
 
