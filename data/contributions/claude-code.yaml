@@ -8,6 +8,7 @@ contributions:
   review_status: not-reviewed
   last_seen_updated: '2025-08-27T14:07:37Z'
   summary: ''
+  state_reason: DUPLICATE
 - number: 5002
   type: issue
   title: 'Feature Request: Shell Take Over / Release'
@@ -15,6 +16,7 @@ contributions:
   review_status: not-reviewed
   last_seen_updated: '2025-08-23T14:06:39Z'
   summary: ''
+  state_reason: DUPLICATE
 - number: 10514
   type: issue
   title: '[Feature Request] Add support for retrieving and editing Claude.ai conversation
@@ -23,6 +25,7 @@ contributions:
   review_status: not-reviewed
   last_seen_updated: '2025-11-09T14:06:43Z'
   summary: ''
+  state_reason: DUPLICATE
 - number: 10638
   type: issue
   title: '[Feature Request] Add /reload command to refresh Claude''s context without
@@ -31,6 +34,7 @@ contributions:
   review_status: not-reviewed
   last_seen_updated: '2025-11-10T14:08:32Z'
   summary: ''
+  state_reason: DUPLICATE
 - number: 10639
   type: issue
   title: '[Feature Request] Add tooltip container visibility indicator for empty state'
@@ -38,6 +42,7 @@ contributions:
   review_status: not-reviewed
   last_seen_updated: '2026-01-20T14:15:16Z'
   summary: ''
+  state_reason: NOT_PLANNED
 - number: 10643
   type: issue
   title: '[Feature Request] Add default system prompt file at ~/.claude/append-to-system-prompt.txt'
@@ -45,6 +50,7 @@ contributions:
   review_status: not-reviewed
   last_seen_updated: '2026-01-17T14:12:47Z'
   summary: ''
+  state_reason: NOT_PLANNED
 - number: 10659
   type: issue
   title: '[Feature Request] Add pause state for background sessions with resume/stop
@@ -53,6 +59,7 @@ contributions:
   review_status: not-reviewed
   last_seen_updated: '2025-11-10T14:08:20Z'
   summary: ''
+  state_reason: DUPLICATE
 - number: 10761
   type: issue
   title: '[Bug] Anthropic API Error: Duplicate Tool Names in Request'
@@ -60,6 +67,7 @@ contributions:
   review_status: not-reviewed
   last_seen_updated: '2026-01-19T14:14:11Z'
   summary: ''
+  state_reason: NOT_PLANNED
 - number: 10926
   type: issue
   title: '[Bug] Vi edit mode Esc handling conflicts with agent interruption in queued
@@ -68,6 +76,7 @@ contributions:
   review_status: not-reviewed
   last_seen_updated: '2026-01-16T14:16:59Z'
   summary: ''
+  state_reason: NOT_PLANNED
 - number: 10936
   type: issue
   title: '[Bug] Hook Status Label Shows "Hook Error" for Successful Executions'
@@ -75,6 +84,7 @@ contributions:
   review_status: not-reviewed
   last_seen_updated: '2025-11-11T14:07:22Z'
   summary: ''
+  state_reason: COMPLETED
 - number: 10986
   type: issue
   title: '[Feature Request] Clarify blocking vs non-blocking hook status in hook messages'
@@ -82,6 +92,7 @@ contributions:
   review_status: not-reviewed
   last_seen_updated: '2026-01-18T14:08:30Z'
   summary: ''
+  state_reason: NOT_PLANNED
 - number: 11065
   type: issue
   title: '[Bug] Skill invocation creates duplicate context in memory'
@@ -89,6 +100,7 @@ contributions:
   review_status: not-reviewed
   last_seen_updated: '2025-11-16T14:06:32Z'
   summary: ''
+  state_reason: DUPLICATE
 - number: 11648
   type: issue
   title: '[Bug Report: Unable to determine issue from minimal input]'
@@ -96,6 +108,7 @@ contributions:
   review_status: not-reviewed
   last_seen_updated: '2025-11-25T14:07:43Z'
   summary: ''
+  state_reason: DUPLICATE
 - number: 12031
   type: issue
   title: 'Bug Report: PreToolUse Hooks Strip Result Data from AskUserQuestion Tool'
@@ -103,6 +116,7 @@ contributions:
   review_status: not-reviewed
   last_seen_updated: '2026-01-12T14:13:01Z'
   summary: ''
+  state_reason: COMPLETED
 - number: 13412
   type: issue
   title: Add option to suppress 'Shell cwd was reset' messages
@@ -110,6 +124,7 @@ contributions:
   review_status: not-reviewed
   last_seen_updated: '2025-12-17T14:09:04Z'
   summary: ''
+  state_reason: COMPLETED
 - number: 17126
   type: issue
   title: '[FEATURE] Real-time auto-refresh for Ctrl+O transcript view when monitoring
@@ -125,6 +140,7 @@ contributions:
   review_status: not-reviewed
   last_seen_updated: '2026-01-20T14:19:43Z'
   summary: ''
+  state_reason: DUPLICATE
 - number: 17716
   type: issue
   title: Retain user input after OAuth token expiration and re-login
@@ -146,6 +162,7 @@ contributions:
   review_status: not-reviewed
   last_seen_updated: '2026-01-28T14:17:33Z'
   summary: ''
+  state_reason: DUPLICATE
 - number: 18654
   type: issue
   title: '[FEATURE] User-configurable session variables accessible from hooks (CLAUDE_SESSION_VARS)'
@@ -161,6 +178,7 @@ contributions:
   review_status: not-reviewed
   last_seen_updated: '2026-02-01T22:03:36Z'
   summary: ''
+  state_reason: COMPLETED
 - number: 19541
   type: issue
   title: 'Feature: Per-terminal session affinity for --continue'
@@ -168,6 +186,7 @@ contributions:
   review_status: not-reviewed
   last_seen_updated: '2026-01-29T18:03:35Z'
   summary: ''
+  state_reason: COMPLETED
 - number: 20157
   type: issue
   title: 'Feature Request: Better Hook Error Disclosure '
@@ -183,6 +202,7 @@ contributions:
   review_status: not-reviewed
   last_seen_updated: '2026-02-03T14:26:09Z'
   summary: ''
+  state_reason: COMPLETED
 - number: 20415
   type: issue
   title: Unknown fields in plugin.json break skill and command registration
@@ -213,6 +233,7 @@ contributions:
   review_status: not-reviewed
   last_seen_updated: '2026-02-04T09:18:18Z'
   summary: ''
+  state_reason: DUPLICATE
 - number: 23089
   type: issue
   title: 'Plugin hooks: shared Python process caches sys.modules across tool calls,

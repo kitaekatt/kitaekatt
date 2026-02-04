@@ -56,16 +56,28 @@ This prints all items needing review and updates the YAML files with `review_sta
 
 For each item with `review_status: not-reviewed`, apply the following rules:
 
+#### PRs
+
 | Condition | Action | Set review_status to |
 |-----------|--------|---------------------|
-| Closed without changes (no merge, no fix) | Skip | `skipped` |
-| Draft PR | Skip | `skipped` |
-| Open issue/PR | Read the issue, write a contextual status summary | `reviewed` |
-| Merged PR or closed-with-fix | Summarize the positive contribution | `reviewed` |
+| Draft | Skip | `skipped` |
+| Closed without merge | Skip | `skipped` |
+| Open | Read the PR, write a contextual status summary | `reviewed` |
+| Merged | Summarize the positive contribution | `reviewed` |
 
-**For open items**: Read the issue/PR via `gh`, write a summary describing what the issue is about, current status, and any blockers.
+#### Issues
 
-**For merged/closed-with-fix items**: Summarize what value this contributed to the project. This is a database entry, not prose — write in an AI-facing manner that captures the technical contribution for later mining into README.md content.
+| Condition | Action | Set review_status to |
+|-----------|--------|---------------------|
+| Closed without resolution (e.g. duplicate, won't fix) | Skip | `skipped` |
+| Closed with resolution (feature shipped, bug fixed) | Summarize the positive contribution | `reviewed` |
+| Open | Read the issue, write a contextual status summary | `reviewed` |
+
+**For open items**: Read the issue/PR via `gh`, write a summary describing what it's about, current status, and any blockers.
+
+**For merged PRs / resolved issues**: Summarize what value this contributed to the project. This is a database entry, not prose — write in an AI-facing manner that captures the technical contribution for later mining into README.md content.
+
+**For issues that led to a feature or fix**: Note whether the requested feature/fix was implemented, even if by someone else. An issue that drove a change is still a positive contribution.
 
 Present each item to the user:
 1. Show the item number, title, status, and repo

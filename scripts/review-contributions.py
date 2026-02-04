@@ -50,6 +50,30 @@ def gh_query(repo: str, kind: str) -> list[dict[str, Any]]:
     return json.loads(result.stdout) if result.stdout.strip() else []
 
 
+def gh_issue_state_reasons(repo: str) -> dict[int, str]:
+    """Query stateReason for closed issues via GraphQL (not available in REST API)."""
+    owner, name = repo.split("/")
+    query = """
+    {
+      repository(owner: "%s", name: "%s") {
+        issues(first: 100, filterBy: {createdBy: "%s", states: [CLOSED]}) {
+          nodes { number stateReason }
+        }
+      }
+    }
+    """ % (owner, name, USERNAME)
+    result = subprocess.run(
+        ["gh", "api", "graphql", "-f", f"query={query}"],
+        capture_output=True, text=True,
+    )
+    if result.returncode != 0:
+        print(f"  Warning: GraphQL query failed for {repo}: {result.stderr.strip()}", file=sys.stderr)
+        return {}
+    data = json.loads(result.stdout)
+    nodes = data.get("data", {}).get("repository", {}).get("issues", {}).get("nodes", [])
+    return {n["number"]: n.get("stateReason", "") for n in nodes}
+
+
 def normalize_state(item: dict[str, Any], kind: str) -> str:
     """Return a normalized status: open, draft, merged, closed."""
     if kind == "pr" and item.get("mergedAt"):
@@ -84,6 +108,9 @@ def process_repo(yaml_path: Path, dry_run: bool) -> list[dict[str, Any]]:
                 seen.add(item["number"])
                 unique_items.append((kind, item))
 
+    # Fetch stateReason for closed issues via GraphQL
+    state_reasons: dict[int, str] = gh_issue_state_reasons(repo)
+
     if not unique_items:
         print("  No contributions found.")
         return needs_review
@@ -94,10 +121,15 @@ def process_repo(yaml_path: Path, dry_run: bool) -> list[dict[str, Any]]:
         status: str = normalize_state(item, kind)
         updated_at: str = item.get("updatedAt", "")
 
+        # Attach state_reason for issues (COMPLETED, DUPLICATE, NOT_PLANNED, etc.)
+        state_reason: str = state_reasons.get(num, "")
+
         if num in existing:
             entry = existing[num]
             entry["status"] = status
             entry["title"] = title
+            if state_reason:
+                entry["state_reason"] = state_reason
             if entry.get("review_status") == "not-reviewed":
                 needs_review.append(entry)
             elif entry.get("last_seen_updated") != updated_at:
@@ -114,6 +146,8 @@ def process_repo(yaml_path: Path, dry_run: bool) -> list[dict[str, Any]]:
                 "last_seen_updated": updated_at,
                 "summary": "",
             }
+            if state_reason:
+                entry["state_reason"] = state_reason
             contributions.append(entry)
             needs_review.append(entry)
 
@@ -143,8 +177,13 @@ def main() -> None:
     print(f"{'=' * 60}")
 
     for item in all_review:
-        flag = f"[{item['status']}]"
-        print(f"  #{item['number']:>6}  {flag:<10}  {item.get('repo', '')}: {item['title']}")
+        status = item["status"]
+        reason = item.get("state_reason", "")
+        if reason:
+            flag = f"[{status}/{reason}]"
+        else:
+            flag = f"[{status}]"
+        print(f"  #{item['number']:>6}  {flag:<28}  {item.get('repo', '')}: {item['title']}")
 
 
 if __name__ == "__main__":
