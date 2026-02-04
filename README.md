@@ -9,7 +9,7 @@ My current focus is AI Programming. I'm a Claude Code power-user, and active con
 - Games industry consultant (Amazon, Spryfox, Roboto Games) with a focus on improving developer workflows and backend services using AI
 - Building and improving LLM infrastructure—particularly GGUF model support, memory optimization, inference performance
 
-## Open Source Contributions
+## Claude and Open Source Contributions
 
 ### Claude Code
 
@@ -82,12 +82,19 @@ Gemma2 GGUF models produced gibberish because llama.cpp adds 1 to RMSNorm weight
 
 ### Hugging Face Transformers
 
-- [Add attn_logit_softcapping to Gemma2/Gemma3 GGUF config](https://github.com/huggingface/transformers/pull/37749)
+**Draft:**
+1. [#42881](https://github.com/huggingface/transformers/pull/42881) — Add attn_logit_softcapping to Gemma2/Gemma3 GGUF config mapping
+Gemma2 and Gemma3 GGUF models lost their attention softcapping parameter during loading — Transformers' GGUF loader didn't map the `attention.logit_softcapping` field from GGUF metadata to the HuggingFace config attribute. Without it, models used the default value, degrading output quality. Fix adds the mapping for both architectures. This is the upstream fix for the vLLM workaround in [#30427](https://github.com/vllm-project/vllm/pull/30427).
 
 ## Tech Stack
 
 <p>
-  <img src="https://skillicons.dev/icons?i=python,typescript,cpp,pytorch,linux,git,github,neovim" />
+  <img src="https://skillicons.dev/icons?i=python,cpp,pytorch,fastapi,linux,git,github" />
+  <br>
+  <img src="https://img.shields.io/badge/CUDA-76B900?style=for-the-badge&logo=nvidia&logoColor=fff" alt="CUDA" />
+  <img src="https://img.shields.io/badge/Claude-191919?style=for-the-badge&logo=claude&logoColor=fff" alt="Claude" />
+  <img src="https://img.shields.io/badge/vLLM-0D96F6?style=for-the-badge" alt="vLLM" />
+  <img src="https://img.shields.io/badge/Transformers-FFD21E?style=for-the-badge&logo=huggingface&logoColor=000" alt="Transformers" />
 </p>
 
 ## GitHub Stats
@@ -104,4 +111,4 @@ Gemma2 GGUF models produced gibberish because llama.cpp adds 1 to RMSNorm weight
 
 ---
 
-<sub>University of Waterloo · Mass Effect · League of Legends · Wild Rift · AI/ML · LLM Inference</sub>
+<sub>Claude · AI/ML · LLM Inference · League of Legends · Mass Effect · Wild Rift · University of Waterloo</sub>

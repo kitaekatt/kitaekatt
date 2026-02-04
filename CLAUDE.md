@@ -14,7 +14,7 @@ This is a documentation-only repository with no build system, dependencies, or t
 
 The README follows a narrative arc: **identity** → **credibility** (past + present) → **evidence** (contributions) → **reinforcement** (tools, stats) → **call to action** (contact). Top-to-bottom is scroll order and importance; left-to-right is priority within a level.
 
-See `skills/profile-review/SKILL.md` for the full structural diagram and section map.
+See `.claude/skills/profile-review/SKILL.md` for the full structural diagram and section map.
 
 ## Editing Guidelines
 

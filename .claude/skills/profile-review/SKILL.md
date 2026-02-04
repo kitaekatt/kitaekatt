@@ -95,31 +95,54 @@ Each box in the diagram maps to a review step. Review proceeds top-to-bottom, le
 
 ## Review Protocol
 
-### Phase 1: Section-by-Section Review
+### Section-by-Section Review
 
 For each section in order:
 
 1. **Present** — Show the section content as quoted text
 2. **Ask** — "Any changes for this section?"
-3. **Collect** — Record requested changes. User may request multiple changes per section.
-4. **Advance** — User says "next" to move to the next section. User may also say "skip" to accept a section as-is.
+3. **Iterate** — User requests changes until satisfied
+4. **Advance** — User says "next" or "skip"
 
-Accumulate all requested changes across sections. Do NOT make any edits during this phase.
+### Applying Edits
 
-### Phase 2: Change Proposal
+When the user says "next" and there are approved changes for the current section:
 
-After all sections have been reviewed:
+1. **Delegate** — Launch a background Haiku agent via the Task tool with:
+   - The exact `old_string` to replace (copied from the current README)
+   - The exact `new_string` to use (the approved revision)
+   - The file path (`README.md`)
+2. **Continue** — Immediately present the next section without waiting
 
-1. Summarize the full list of collected changes
-2. Enter plan mode with the proposed edits
-3. Wait for user approval before making any changes
+This keeps the review moving while edits happen in parallel. If "skip" or no changes, just advance.
 
-### Decision Gates
+### After All Sections
 
-| Gate | Trigger | Action |
-|------|---------|--------|
-| Section gate | Each section | Present content, wait for "next" or "skip" |
-| Final gate | All sections reviewed | Summarize changes, enter plan mode |
+Verify all background edits completed successfully. Report any failures for manual resolution.
+
+## Contribution Description Protocol
+
+When writing or revising descriptions for open source contributions (issues and PRs):
+
+1. **Lead with the concrete user symptom**, not the technical root cause — what broke or was missing from the user's perspective
+2. **State impact** — who was affected and how their workflow broke
+3. **Describe what the filing contributed** — testing matrices, design proposals, frameworks, reproduction steps
+4. **Show how the fix manifests for users** — what changed in their experience
+5. **Avoid internal process details** — don't mention auto-close bots, resubmissions, or "Closed as completed"
+
+### Attribution ordering
+
+When attribution is known, order contributions by specificity:
+
+1. **Known fixer** first — include `@username` (e.g., "Fixed by @ltawfik")
+2. **Known version** second — include version number (e.g., "Fixed in v2.0.76")
+3. **Everything else** third — behavioral description of the resolution
+
+### Tone
+
+- Professional and factual — no superlatives or self-promotion
+- Describe what happened, not how impressive it was
+- Use the contribution's actual scope — don't inflate a bug report into "engineering a solution"
 
 ## Notes
 
