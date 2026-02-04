@@ -15,14 +15,20 @@ My current focus is AI Programming. I'm a Claude Code power-user, and active con
 
 As an active contributor to Anthropic's Claude Code project, I've filed feature requests and submitted bug reports to improve the AI coding agent experience.
 
-1. [#13412](https://github.com/anthropics/claude-code/issues/13412) — "Shell cwd was reset" message noise.
-Users working across multiple repositories from a central config repo saw this message after every Bash command run outside the project root, making output hard to read. Filed a request to make it suppressible. Fixed by @ltawfik.
-2. [#20409](https://github.com/anthropics/claude-code/issues/20409) — Silent plugin skill registration failure.
+1. [#20409](https://github.com/anthropics/claude-code/issues/20409) — Silent plugin skill registration failure.
 Unknown fields in plugin.json caused skills to silently fail to register — the plugin appeared loaded but skills weren't discoverable, with no error surfaced. Filed a report with a disclosure principles framework and proposal for warning badges and /doctor integration. Fixed by @blois.
-3. [#12031](https://github.com/anthropics/claude-code/issues/12031) — PreToolUse hooks stripped AskUserQuestion answers.
-Any active PreToolUse hook caused the user's selection to be silently dropped. Filed a detailed report with a testing matrix isolating the bug to PreToolUse specifically (PostToolUse and SessionStart were unaffected). Fixed in v2.0.76.
-4. [#19541](https://github.com/anthropics/claude-code/issues/19541) — Per-terminal session affinity for --continue.
+2. [#19541](https://github.com/anthropics/claude-code/issues/19541) — Per-terminal session affinity for --continue.
 `--continue` resumed the most recent session globally, breaking multi-terminal workflows — restarting in one terminal would pick up a different terminal's session. Filed a proposal with a terminal identifier priority table covering iTerm, Kitty, Windows Terminal, tmux, and others. Sessions now display a resume command with session ID on exit (e.g. `claude --resume <session-id>`), giving users explicit control over which session to continue.
+3. [#13412](https://github.com/anthropics/claude-code/issues/13412) — "Shell cwd was reset" message noise.
+Users working across multiple repositories from a central config repo saw this message after every Bash command run outside the project root, making output hard to read. Filed a request to make it suppressible. Fixed by @ltawfik.
+4. [#12031](https://github.com/anthropics/claude-code/issues/12031) — PreToolUse hooks stripped AskUserQuestion answers.
+Any active PreToolUse hook caused the user's selection to be silently dropped. Filed a detailed report with a testing matrix isolating the bug to PreToolUse specifically (PostToolUse and SessionStart were unaffected). Fixed in v2.0.76.
+
+### Hugging Face Transformers
+
+**Draft:**
+1. [#42881](https://github.com/huggingface/transformers/pull/42881) — Add attn_logit_softcapping to Gemma2/Gemma3 GGUF config mapping.
+Gemma2 and Gemma3 GGUF models lost their attention softcapping parameter during loading — Transformers' GGUF loader didn't map the `attention.logit_softcapping` field from GGUF metadata to the HuggingFace config attribute. Without it, models used the default value, degrading output quality. Fix adds the mapping for both architectures. This is the upstream fix for the vLLM workaround in [#30427](https://github.com/vllm-project/vllm/pull/30427).
 
 ### vLLM (High-throughput LLM Inference Engine)
 
@@ -79,12 +85,6 @@ The speculator probe tried to load config.json before GGUF handling ran, failing
 
 17. [#31464](https://github.com/vllm-project/vllm/pull/31464) — Apply RMSNorm weight correction for Gemma2 GGUF models.
 Gemma2 GGUF models produced gibberish because llama.cpp adds 1 to RMSNorm weights during GGUF conversion, but vLLM expects original values. Fix subtracts 1 during loading, matching the correction already applied for Gemma3 in #26189. Tested on RTX 5090: coherent output, 40% MMLU accuracy, 344 tok/s.
-
-### Hugging Face Transformers
-
-**Draft:**
-1. [#42881](https://github.com/huggingface/transformers/pull/42881) — Add attn_logit_softcapping to Gemma2/Gemma3 GGUF config mapping.
-Gemma2 and Gemma3 GGUF models lost their attention softcapping parameter during loading — Transformers' GGUF loader didn't map the `attention.logit_softcapping` field from GGUF metadata to the HuggingFace config attribute. Without it, models used the default value, degrading output quality. Fix adds the mapping for both architectures. This is the upstream fix for the vLLM workaround in [#30427](https://github.com/vllm-project/vllm/pull/30427).
 
 ## Tech Stack
 
