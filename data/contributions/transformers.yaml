@@ -1,0 +1,10 @@
+repository: huggingface/transformers
+url: https://github.com/huggingface/transformers
+contributions:
+- number: 42881
+  type: pr
+  title: '[GGUF] Add attn_logit_softcapping to Gemma2/Gemma3 config mapping'
+  status: draft
+  review_status: not-reviewed
+  last_seen_updated: '2025-12-18T20:00:44Z'
+  summary: ''

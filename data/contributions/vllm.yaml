@@ -1,0 +1,188 @@
+repository: vllm-project/vllm
+url: https://github.com/vllm-project/vllm
+contributions:
+- number: 29813
+  type: pr
+  title: '[Core] Fix livelock in shm_broadcast under high concurrent load'
+  status: closed
+  review_status: not-reviewed
+  last_seen_updated: '2025-12-01T22:25:42Z'
+  summary: ''
+- number: 29819
+  type: pr
+  title: 'fix(shm): Add memory barriers for cross-process shared memory visibility'
+  status: closed
+  review_status: not-reviewed
+  last_seen_updated: '2025-12-10T18:10:44Z'
+  summary: ''
+- number: 30090
+  type: pr
+  title: 'fix: Force float16 dtype for GGUF models to fix incorrect output'
+  status: closed
+  review_status: not-reviewed
+  last_seen_updated: '2025-12-10T17:46:18Z'
+  summary: ''
+- number: 30209
+  type: pr
+  title: '[Bugfix] Skip generation config fallback for GGUF to prevent multi-process
+    hang'
+  status: merged
+  review_status: not-reviewed
+  last_seen_updated: '2025-12-09T06:19:14Z'
+  summary: ''
+- number: 30284
+  type: pr
+  title: '[BugFix] Lazy tokenizer init in StructuredOutputManager to prevent GGUF
+    semaphore leak'
+  status: closed
+  review_status: not-reviewed
+  last_seen_updated: '2025-12-10T17:46:29Z'
+  summary: ''
+- number: 30365
+  type: pr
+  title: 'fix(gguf): Auto-select compatible dtype for GGUF models on Blackwell'
+  status: closed
+  review_status: not-reviewed
+  last_seen_updated: '2025-12-10T17:46:42Z'
+  summary: ''
+- number: 30404
+  type: pr
+  title: 'fix(gguf): Ensure Gemma2 configs have hidden_act for backward compatibility'
+  status: draft
+  review_status: not-reviewed
+  last_seen_updated: '2025-12-10T17:46:44Z'
+  summary: ''
+- number: 30405
+  type: pr
+  title: 'fix(gguf): Skip lm_head mapping for models with tied word embeddings'
+  status: draft
+  review_status: not-reviewed
+  last_seen_updated: '2025-12-10T17:46:52Z'
+  summary: ''
+- number: 30406
+  type: pr
+  title: 'fix(nemotron_h): Add missing rotary positional embeddings to attention layers'
+  status: draft
+  review_status: not-reviewed
+  last_seen_updated: '2025-12-10T17:46:53Z'
+  summary: ''
+- number: 30407
+  type: pr
+  title: 'fix(shm): Add memory barriers for cross-process shared memory visibility'
+  status: merged
+  review_status: not-reviewed
+  last_seen_updated: '2025-12-20T12:11:23Z'
+  summary: ''
+- number: 30408
+  type: pr
+  title: 'fix(gguf): Disable bfloat16 for GGUF on blackwell device'
+  status: merged
+  review_status: not-reviewed
+  last_seen_updated: '2025-12-15T15:48:46Z'
+  summary: ''
+- number: 30409
+  type: pr
+  title: '[BugFix] Lazy tokenizer init in StructuredOutputManager to prevent GGUF
+    semaphore leak'
+  status: open
+  review_status: not-reviewed
+  last_seen_updated: '2026-01-27T05:01:28Z'
+  summary: ''
+- number: 30410
+  type: pr
+  title: 'fix(gguf): Auto-select compatible dtype for GGUF models on Blackwell'
+  status: open
+  review_status: not-reviewed
+  last_seen_updated: '2026-01-22T21:42:14Z'
+  summary: ''
+- number: 30411
+  type: pr
+  title: 'fix(gguf): Ensure Gemma2 configs have hidden_act for backward compatibility'
+  status: draft
+  review_status: not-reviewed
+  last_seen_updated: '2026-01-19T17:27:29Z'
+  summary: ''
+- number: 30412
+  type: pr
+  title: 'fix(gguf): Skip lm_head mapping for models with tied word embeddings'
+  status: open
+  review_status: not-reviewed
+  last_seen_updated: '2026-01-22T21:23:38Z'
+  summary: ''
+- number: 30413
+  type: pr
+  title: 'fix(nemotron_h): Add missing rotary positional embeddings to attention layers'
+  status: draft
+  review_status: not-reviewed
+  last_seen_updated: '2026-01-22T20:51:58Z'
+  summary: ''
+- number: 30421
+  type: pr
+  title: 'fix(gemma2): Skip missing parameters during GGUF weight loading'
+  status: draft
+  review_status: not-reviewed
+  last_seen_updated: '2025-12-15T15:45:37Z'
+  summary: ''
+- number: 30423
+  type: pr
+  title: 'fix(gguf): Make GGUFMoEMethod.apply() parameters optional'
+  status: draft
+  review_status: not-reviewed
+  last_seen_updated: '2025-12-10T21:45:37Z'
+  summary: ''
+- number: 30424
+  type: pr
+  title: 'fix(gemma2): Add quant_config to embedding layer for GGUF support'
+  status: draft
+  review_status: not-reviewed
+  last_seen_updated: '2026-01-19T17:27:48Z'
+  summary: ''
+- number: 30427
+  type: pr
+  title: 'fix(gguf): Extract attn_logit_softcapping from GGUF metadata'
+  status: draft
+  review_status: not-reviewed
+  last_seen_updated: '2025-12-16T12:34:04Z'
+  summary: ''
+- number: 30434
+  type: pr
+  title: 'fix(gguf): Use EOS token ID from GGUF metadata instead of HF tokenizer'
+  status: open
+  review_status: not-reviewed
+  last_seen_updated: '2026-01-22T21:22:58Z'
+  summary: ''
+- number: 30497
+  type: pr
+  title: 'fix(gguf): GGUF model support fixes for Blackwell GPUs'
+  status: draft
+  review_status: not-reviewed
+  last_seen_updated: '2025-12-15T15:56:15Z'
+  summary: ''
+- number: 30500
+  type: pr
+  title: 'feat(gguf): Extract HF config from GGUF metadata for repos without config.json'
+  status: draft
+  review_status: not-reviewed
+  last_seen_updated: '2025-12-15T16:49:27Z'
+  summary: ''
+- number: 30699
+  type: pr
+  title: '[Bugfix] Skip missing parameters during GGUF Gemma2 weight loading'
+  status: draft
+  review_status: not-reviewed
+  last_seen_updated: '2026-01-19T17:27:51Z'
+  summary: ''
+- number: 30702
+  type: pr
+  title: '[Bugfix] Handle missing config.json in speculator probe for GGUF models'
+  status: draft
+  review_status: not-reviewed
+  last_seen_updated: '2026-01-22T04:25:36Z'
+  summary: ''
+- number: 31464
+  type: pr
+  title: '[Bugfix] Apply RMSNorm weight correction for Gemma2 GGUF models'
+  status: draft
+  review_status: not-reviewed
+  last_seen_updated: '2026-01-14T07:44:27Z'
+  summary: ''

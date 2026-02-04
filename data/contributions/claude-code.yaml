@@ -1,0 +1,238 @@
+repository: anthropics/claude-code
+url: https://github.com/anthropics/claude-code
+contributions:
+- number: 4024
+  type: issue
+  title: 'Feature Request: Question Tool'
+  status: closed
+  review_status: not-reviewed
+  last_seen_updated: '2025-08-27T14:07:37Z'
+  summary: ''
+- number: 5002
+  type: issue
+  title: 'Feature Request: Shell Take Over / Release'
+  status: closed
+  review_status: not-reviewed
+  last_seen_updated: '2025-08-23T14:06:39Z'
+  summary: ''
+- number: 10514
+  type: issue
+  title: '[Feature Request] Add support for retrieving and editing Claude.ai conversation
+    artifacts'
+  status: closed
+  review_status: not-reviewed
+  last_seen_updated: '2025-11-09T14:06:43Z'
+  summary: ''
+- number: 10638
+  type: issue
+  title: '[Feature Request] Add /reload command to refresh Claude''s context without
+    restarting'
+  status: closed
+  review_status: not-reviewed
+  last_seen_updated: '2025-11-10T14:08:32Z'
+  summary: ''
+- number: 10639
+  type: issue
+  title: '[Feature Request] Add tooltip container visibility indicator for empty state'
+  status: closed
+  review_status: not-reviewed
+  last_seen_updated: '2026-01-20T14:15:16Z'
+  summary: ''
+- number: 10643
+  type: issue
+  title: '[Feature Request] Add default system prompt file at ~/.claude/append-to-system-prompt.txt'
+  status: closed
+  review_status: not-reviewed
+  last_seen_updated: '2026-01-17T14:12:47Z'
+  summary: ''
+- number: 10659
+  type: issue
+  title: '[Feature Request] Add pause state for background sessions with resume/stop
+    options'
+  status: closed
+  review_status: not-reviewed
+  last_seen_updated: '2025-11-10T14:08:20Z'
+  summary: ''
+- number: 10761
+  type: issue
+  title: '[Bug] Anthropic API Error: Duplicate Tool Names in Request'
+  status: closed
+  review_status: not-reviewed
+  last_seen_updated: '2026-01-19T14:14:11Z'
+  summary: ''
+- number: 10926
+  type: issue
+  title: '[Bug] Vi edit mode Esc handling conflicts with agent interruption in queued
+    message editing'
+  status: closed
+  review_status: not-reviewed
+  last_seen_updated: '2026-01-16T14:16:59Z'
+  summary: ''
+- number: 10936
+  type: issue
+  title: '[Bug] Hook Status Label Shows "Hook Error" for Successful Executions'
+  status: closed
+  review_status: not-reviewed
+  last_seen_updated: '2025-11-11T14:07:22Z'
+  summary: ''
+- number: 10986
+  type: issue
+  title: '[Feature Request] Clarify blocking vs non-blocking hook status in hook messages'
+  status: closed
+  review_status: not-reviewed
+  last_seen_updated: '2026-01-18T14:08:30Z'
+  summary: ''
+- number: 11065
+  type: issue
+  title: '[Bug] Skill invocation creates duplicate context in memory'
+  status: closed
+  review_status: not-reviewed
+  last_seen_updated: '2025-11-16T14:06:32Z'
+  summary: ''
+- number: 11648
+  type: issue
+  title: '[Bug Report: Unable to determine issue from minimal input]'
+  status: closed
+  review_status: not-reviewed
+  last_seen_updated: '2025-11-25T14:07:43Z'
+  summary: ''
+- number: 12031
+  type: issue
+  title: 'Bug Report: PreToolUse Hooks Strip Result Data from AskUserQuestion Tool'
+  status: closed
+  review_status: not-reviewed
+  last_seen_updated: '2026-01-12T14:13:01Z'
+  summary: ''
+- number: 13412
+  type: issue
+  title: Add option to suppress 'Shell cwd was reset' messages
+  status: closed
+  review_status: not-reviewed
+  last_seen_updated: '2025-12-17T14:09:04Z'
+  summary: ''
+- number: 17126
+  type: issue
+  title: '[FEATURE] Real-time auto-refresh for Ctrl+O transcript view when monitoring
+    background processes'
+  status: open
+  review_status: not-reviewed
+  last_seen_updated: '2026-01-09T15:43:53Z'
+  summary: ''
+- number: 17139
+  type: issue
+  title: '[FEATURE] Clarify blocking vs non-blocking hook status in hook messages'
+  status: closed
+  review_status: not-reviewed
+  last_seen_updated: '2026-01-20T14:19:43Z'
+  summary: ''
+- number: 17716
+  type: issue
+  title: Retain user input after OAuth token expiration and re-login
+  status: open
+  review_status: not-reviewed
+  last_seen_updated: '2026-01-12T15:48:23Z'
+  summary: ''
+- number: 18213
+  type: issue
+  title: 'Feature Request: Command Pre-execution Dependencies (pre_commands)'
+  status: open
+  review_status: not-reviewed
+  last_seen_updated: '2026-01-14T20:27:15Z'
+  summary: ''
+- number: 18624
+  type: issue
+  title: 'Feature: Per-terminal session affinity for --continue'
+  status: closed
+  review_status: not-reviewed
+  last_seen_updated: '2026-01-28T14:17:33Z'
+  summary: ''
+- number: 18654
+  type: issue
+  title: '[FEATURE] User-configurable session variables accessible from hooks (CLAUDE_SESSION_VARS)'
+  status: open
+  review_status: not-reviewed
+  last_seen_updated: '2026-01-16T19:35:34Z'
+  summary: ''
+- number: 18878
+  type: issue
+  title: 'Feature Request: Allow configuring or disabling ''clear context'' default
+    when accepting plans'
+  status: closed
+  review_status: not-reviewed
+  last_seen_updated: '2026-02-01T22:03:36Z'
+  summary: ''
+- number: 19541
+  type: issue
+  title: 'Feature: Per-terminal session affinity for --continue'
+  status: closed
+  review_status: not-reviewed
+  last_seen_updated: '2026-01-29T18:03:35Z'
+  summary: ''
+- number: 20157
+  type: issue
+  title: 'Feature Request: Better Hook Error Disclosure '
+  status: open
+  review_status: not-reviewed
+  last_seen_updated: '2026-01-28T17:57:33Z'
+  summary: ''
+- number: 20409
+  type: issue
+  title: 'Issue: Silent skill loading failure in plugins, Feature Request: Plugin
+    Manifest Validation with Error Disclosure'
+  status: closed
+  review_status: not-reviewed
+  last_seen_updated: '2026-02-03T14:26:09Z'
+  summary: ''
+- number: 20415
+  type: issue
+  title: Unknown fields in plugin.json break skill and command registration
+  status: open
+  review_status: not-reviewed
+  last_seen_updated: '2026-01-24T02:57:43Z'
+  summary: ''
+- number: 21504
+  type: issue
+  title: '[UX] "hook returned blocking error" label is redundant when hook provides
+    complete disclosure'
+  status: open
+  review_status: not-reviewed
+  last_seen_updated: '2026-01-28T17:56:21Z'
+  summary: ''
+- number: 21731
+  type: issue
+  title: 'Feature: Per-terminal session affinity for --continue'
+  status: open
+  review_status: not-reviewed
+  last_seen_updated: '2026-01-29T18:04:10Z'
+  summary: ''
+- number: 22223
+  type: issue
+  title: Plugin hook Python subprocess appears to cache module state, causing stale
+    import errors that resolve spontaneously
+  status: closed
+  review_status: not-reviewed
+  last_seen_updated: '2026-02-04T09:18:18Z'
+  summary: ''
+- number: 23089
+  type: issue
+  title: 'Plugin hooks: shared Python process caches sys.modules across tool calls,
+    causing stale import errors'
+  status: open
+  review_status: not-reviewed
+  last_seen_updated: '2026-02-04T15:04:49Z'
+  summary: ''
+- number: 23142
+  type: issue
+  title: User interrupt during streaming can freeze whitespace-only text block into
+    history, causing persistent 400 errors
+  status: open
+  review_status: not-reviewed
+  last_seen_updated: '2026-02-04T17:24:51Z'
+  summary: ''
+- number: 23143
+  type: issue
+  title: Duplicate detection can auto-close both issues when they reference each other
+  status: open
+  review_status: not-reviewed
+  last_seen_updated: '2026-02-04T17:41:26Z'
+  summary: ''
