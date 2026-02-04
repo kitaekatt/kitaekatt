@@ -69,9 +69,12 @@ For each item with `review_status: not-reviewed`, apply the following rules:
 
 | Condition | Action | Set review_status to |
 |-----------|--------|---------------------|
-| Closed without resolution (e.g. duplicate, won't fix) | Skip | `skipped` |
-| Closed with resolution (feature shipped, bug fixed) | Summarize the positive contribution | `reviewed` |
+| `state_reason: DUPLICATE` | Skip | `skipped` |
+| `state_reason: NOT_PLANNED` | Skip | `skipped` |
+| `state_reason: COMPLETED` | **Verify via comments** (see below), then summarize or skip | `reviewed` or `skipped` |
 | Open | Read the issue, write a contextual status summary | `reviewed` |
+
+**COMPLETED verification**: GitHub's COMPLETED label is unreliable — authors can close their own issues as COMPLETED even when the issue was effectively a duplicate or self-resolved. For every COMPLETED issue, read the comments to verify the contribution actually led to a fix. If the author closed it after finding an existing duplicate or without evidence of resolution, mark it `skipped`.
 
 **For open items**: Read the issue/PR via `gh`, write a summary describing what it's about, current status, and any blockers.
 
