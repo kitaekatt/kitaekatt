@@ -16,6 +16,12 @@ The README follows a narrative arc: **identity** → **credibility** (past + pre
 
 See `.claude/skills/profile-review/SKILL.md` for the full structural diagram and section map.
 
+## Related Projects
+
+**`kitaekatt.github.io`** (`~/Dev/kitaekatt.github.io`) — The GitHub Pages site that renders at `https://kitaekatt.github.io`. It owns the front page presentation and all published articles. That project is responsible for staying in sync with `README.md` in this repo — how it achieves that is up to its own architecture (GitHub Action, manual sync, etc.).
+
+When `README.md` changes here, note that `kitaekatt.github.io` may need updating.
+
 ## Editing Guidelines
 
 - The README uses GitHub-flavored markdown and renders as a GitHub profile page

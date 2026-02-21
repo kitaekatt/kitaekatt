@@ -13,6 +13,9 @@ My current focus is AI Programming. I'm a Claude Code power-user, and active con
 
 ### Claude Code
 
+<details>
+<summary>4 issues filed — 3 fixed</summary>
+
 As an active contributor to Anthropic's Claude Code project, I've filed feature requests and submitted bug reports to improve the AI coding agent experience.
 
 1. [#20409](https://github.com/anthropics/claude-code/issues/20409) — Silent plugin skill registration failure.
@@ -24,13 +27,12 @@ Users working across multiple repositories from a central config repo saw this m
 4. [#12031](https://github.com/anthropics/claude-code/issues/12031) — PreToolUse hooks stripped AskUserQuestion answers.
 Any active PreToolUse hook caused the user's selection to be silently dropped. Filed a detailed report with a testing matrix isolating the bug to PreToolUse specifically (PostToolUse and SessionStart were unaffected). Fixed in v2.0.76.
 
-### Hugging Face Transformers
-
-**In Progress:**
-1. [#42881](https://github.com/huggingface/transformers/pull/42881) — Add attn_logit_softcapping to Gemma2/Gemma3 GGUF config mapping.
-Gemma2 and Gemma3 GGUF models lost their attention softcapping parameter during loading — Transformers' GGUF loader didn't map the `attention.logit_softcapping` field from GGUF metadata to the HuggingFace config attribute. Without it, models used the default value, degrading output quality. Fix adds the mapping for both architectures. This is the upstream fix for the vLLM workaround in [#30427](https://github.com/vllm-project/vllm/pull/30427).
+</details>
 
 ### vLLM (High-throughput LLM Inference Engine)
+
+<details>
+<summary>17 PRs — GGUF support, Blackwell compatibility, multi-process inference</summary>
 
 **Merged:**
 1. [#30209](https://github.com/vllm-project/vllm/pull/30209) — Skip generation config fallback for GGUF to prevent multi-process hang.
@@ -85,6 +87,10 @@ The speculator probe tried to load config.json before GGUF handling ran, failing
 
 17. [#31464](https://github.com/vllm-project/vllm/pull/31464) — Apply RMSNorm weight correction for Gemma2 GGUF models.
 Gemma2 GGUF models produced gibberish because llama.cpp adds 1 to RMSNorm weights during GGUF conversion, but vLLM expects original values. Fix subtracts 1 during loading, matching the correction already applied for Gemma3 in #26189. Tested on RTX 5090: coherent output, 40% MMLU accuracy, 344 tok/s.
+
+</details>
+
+**Hugging Face Transformers:** While debugging Gemma2/Gemma3 GGUF output quality in vLLM, I traced the root cause upstream — Transformers' GGUF loader wasn't mapping `attn_logit_softcapping` from GGUF metadata into the HuggingFace config, causing models to silently use the wrong default. [#42881](https://github.com/huggingface/transformers/pull/42881) adds the config mappings for both architectures; once merged, it replaces the workaround in vLLM [#30427](https://github.com/vllm-project/vllm/pull/30427).
 
 ## Tech Stack
 
