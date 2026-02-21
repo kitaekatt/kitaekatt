@@ -15,7 +15,7 @@ No single tier of the hierarchy wins on all three dimensions. That's why you nee
 
 The interactive diagram below walks through the full framework — the hierarchy, loading triggers, decision flows for where to place new information, and maintenance flows for when things grow too large:
 
-**[Open interactive diagram →](https://stackblitz.com/github/kitaekatt/kitaekatt/tree/main/diagrams/claude-code-information-hierarchy?view=preview&hideExplorer=1&hideNavigation=1&hidedevtools=1)**
+{% stackblitz github-x8wquybx view=preview %}
 
 ---
 
