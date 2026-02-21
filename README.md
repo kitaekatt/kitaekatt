@@ -4,7 +4,7 @@ I'm a 20+ year games industry veteran (BioWare - Mass Effect 1-3, Riot Games - L
 
 ## Current Focus
 
-- Increasing developer productivity by creating AI-enhanced workflows.
+- Consultant focused on increasing developer productivity by creating AI-enhanced workflows (Amazon, Spryfox, Roboto Games)
 - Improving performance of locally hosted LLM infrastructure (VLLM), GGUF model support, memory optimization, inference performance.
 
 ## Articles
