@@ -16,7 +16,7 @@ My current focus is AI Programming. I'm a Claude Code power-user, and active con
 As an active contributor to Anthropic's Claude Code project, I've filed feature requests and submitted bug reports to improve the AI coding agent experience.
 
 <details>
-<summary>Feature requests implemented</summary>
+<summary>2 feature requests implemented</summary>
 
 1. [#19541](https://github.com/anthropics/claude-code/issues/19541) — Per-terminal session affinity for --continue.
 `--continue` resumed the most recent session globally, breaking multi-terminal workflows — restarting in one terminal would pick up a different terminal's session. Filed a proposal with a terminal identifier priority table covering iTerm, Kitty, Windows Terminal, tmux, and others. Sessions now display a resume command with session ID on exit (e.g. `claude --resume <session-id>`), giving users explicit control over which session to continue.
@@ -26,7 +26,7 @@ Users working across multiple repositories from a central config repo saw this m
 </details>
 
 <details>
-<summary>Bugs reported and fixed</summary>
+<summary>2 bugs reported and fixed</summary>
 
 1. [#20409](https://github.com/anthropics/claude-code/issues/20409) — Silent plugin skill registration failure.
 Unknown fields in plugin.json caused skills to silently fail to register — the plugin appeared loaded but skills weren't discoverable, with no error surfaced. Filed a report with a disclosure principles framework and proposal for warning badges and /doctor integration. Fixed by @blois.
