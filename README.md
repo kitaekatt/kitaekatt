@@ -1,6 +1,6 @@
 # Hi, I'm Christina Norman
 
-I'm a 20+ year games industry veteran (BioWare - Mass Effect 1-3, Riot Games - League of Legends, Wild Rift) and entrepreneur (Founder: Elodie Games) where I've developed my engineering and game design skills.
+I'm a 20+ year games industry veteran (BioWare - Mass Effect 1-3, Riot Games - League of Legends, Wild Rift) and entrepreneur (Founder: Elodie Games) My strengths include game engineering, game design, and studio leadership.
 
 My current focus is AI Programming. I'm a Claude Code power-user, and active contributor to [vLLM](https://github.com/vllm-project/vllm) and [Hugging Face Transformers](https://github.com/huggingface/transformers).
 
