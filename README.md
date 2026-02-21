@@ -20,7 +20,7 @@ Articles I've written on Claude Code and developer workflows.
 
 ### Claude Code
 
-As an active contributor to Anthropic's Claude Code project, I've filed feature requests and submitted bug reports to improve the AI coding agent experience.
+As an active contributor to Anthropic's Claude Code project, I've filed feature requests and submitted bug reports that have resulted in tangible improvements to the developer experience.
 
 <details>
 <summary>2 feature requests implemented</summary>
