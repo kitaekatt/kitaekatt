@@ -1,0 +1,7 @@
+articles: []
+# Example entry:
+# - file: articles/my-article.md
+#   title: My Article Title
+#   devto_id: 123456
+#   devto_url: https://dev.to/kitaekatt/my-article-abc
+#   status: draft   # draft | published
