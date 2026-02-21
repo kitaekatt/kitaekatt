@@ -2,8 +2,6 @@
 
 I'm a 20+ year games industry veteran (BioWare - Mass Effect 1-3, Riot Games - League of Legends, Wild Rift) and entrepreneur (Founder: Elodie Games) My strengths include game engineering, game design, and studio leadership.
 
-My current focus is AI Programming. I'm a Claude Code power-user, and active contributor to [vLLM](https://github.com/vllm-project/vllm) and [Hugging Face Transformers](https://github.com/huggingface/transformers).
-
 ## Current Focus
 
 - Increasing developer productivity by creating AI-enhanced workflows.
@@ -42,7 +40,7 @@ Any active PreToolUse hook caused the user's selection to be silently dropped. F
 
 </details>
 
-### vLLM (High-throughput LLM Inference Engine)
+### [vLLM](https://github.com/vllm-project/vllm) (High-throughput LLM Inference Engine)
 
 While working to get Gemma2, Gemma3, and other quantized models loading and running correctly in vLLM — particularly on Blackwell hardware (RTX 5090) — I traced and fixed a series of bugs in the GGUF backend: multi-process hangs, config mapping gaps, dtype conflicts, weight loading errors, and missing architecture support.
 
@@ -112,7 +110,7 @@ Gemma2 GGUF models produced gibberish because llama.cpp adds 1 to RMSNorm weight
 
 </details>
 
-**Hugging Face Transformers:** While debugging Gemma2/Gemma3 GGUF output quality in vLLM, I traced the root cause upstream — Transformers' GGUF loader wasn't mapping `attn_logit_softcapping` from GGUF metadata into the HuggingFace config, causing models to silently use the wrong default. [#42881](https://github.com/huggingface/transformers/pull/42881) adds the config mappings for both architectures; once merged, it replaces the workaround in vLLM [#30427](https://github.com/vllm-project/vllm/pull/30427).
+**[Hugging Face Transformers](https://github.com/huggingface/transformers):** While debugging Gemma2/Gemma3 GGUF output quality in vLLM, I traced the root cause upstream — Transformers' GGUF loader wasn't mapping `attn_logit_softcapping` from GGUF metadata into the HuggingFace config, causing models to silently use the wrong default. [#42881](https://github.com/huggingface/transformers/pull/42881) adds the config mappings for both architectures; once merged, it replaces the workaround in vLLM [#30427](https://github.com/vllm-project/vllm/pull/30427).
 
 ## Tech Stack
 
