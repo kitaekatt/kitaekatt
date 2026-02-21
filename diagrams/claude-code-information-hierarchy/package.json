@@ -1,5 +1,5 @@
 {
   "name": "claude-code-information-hierarchy",
-  "scripts": { "start": "serve ." },
-  "dependencies": { "serve": "latest" }
+  "scripts": { "start": "npx --yes serve@14 -s . -l 3000" },
+  "dependencies": {}
 }
