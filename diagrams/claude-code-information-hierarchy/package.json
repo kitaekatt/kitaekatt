@@ -1,0 +1,5 @@
+{
+  "name": "claude-code-information-hierarchy",
+  "scripts": { "start": "serve ." },
+  "dependencies": { "serve": "latest" }
+}
