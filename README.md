@@ -9,7 +9,7 @@ I'm a 20+ year games industry veteran (BioWare - Mass Effect 1-3, Riot Games - L
 
 ## Articles
 
-Articles I've written on Claude Code and developer workflows.
+Articles I've written on Claude Code and developer productivity.
 
 - [The Claude Code Information Hierarchy](https://dev.to/kitaekatt/the-claude-code-information-hierarchy-5b3o-temp-slug-2941549)
 - [Mastering Cache Hits in Claude Code](https://dev.to/kitaekatt/mastering-cache-hits-in-claude-code-5648)
