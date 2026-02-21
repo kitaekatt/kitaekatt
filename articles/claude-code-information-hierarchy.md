@@ -9,9 +9,9 @@ published: false
 
 Every piece of information you give Claude Code can be evaluated on three axes:
 
-1. **<span style="color:#ffbe5c">Recall</span>** — Likelihood Claude will load this information into context at all. *Claude can't apply information it doesn't recall.*
-2. **<span style="color:#7cacf8">Attention</span>** — Likelihood Claude will skillfully apply the information once it's loaded. *If Claude ignores information, it might as well not recall it.*
-3. **<span style="color:#5eeaa0">Context Load</span>** — How much token budget this information consumes. *Higher context load means higher cost, worse attention, slower speed.*
+1. 🟡 **Recall** — Likelihood Claude will load this information into context at all. *Claude can't apply information it doesn't recall.*
+2. 🔵 **Attention** — Likelihood Claude will skillfully apply the information once it's loaded. *If Claude ignores information, it might as well not recall it.*
+3. 🟢 **Context Load** — How much token budget this information consumes. *Higher context load means higher cost, worse attention, slower speed.*
 
 No single tier of the hierarchy wins on all three dimensions. That's why you need the hierarchy rather than putting everything in one place.
 
@@ -19,11 +19,11 @@ No single tier of the hierarchy wins on all three dimensions. That's why you nee
 
 ## The Hierarchy
 
-| Tier | <span style="color:#ffbe5c">Recall</span> | <span style="color:#7cacf8">Attention</span> | <span style="color:#5eeaa0">Context Load</span> |
+| Tier | 🟡 Recall | 🔵 Attention | 🟢 Context Load |
 |------|--------|-----------|--------------|
-| <span style="color:#ff8a8a">**Root CLAUDE.md**</span> | Highest — always loaded | Degrades with context size | High — always consuming tokens |
-| <span style="color:#c9a0f0">**Sub-dir CLAUDE.md**</span> | High — loaded on file access | Higher — less noise than root | Medium — only when relevant |
-| <span style="color:#62dce8">**Skills**</span> | Lower — but user can manually invoke | Highest — fresh, focused context | Lowest — on-demand only |
+| 🟥 **Root CLAUDE.md** | Highest — always loaded | Degrades with context size | High — always consuming tokens |
+| 🟣 **Sub-dir CLAUDE.md** | High — loaded on file access | Higher — less noise than root | Medium — only when relevant |
+| 🔷 **Skills** | Lower — but user can manually invoke | Highest — fresh, focused context | Lowest — on-demand only |
 
 ---
 
@@ -31,10 +31,10 @@ No single tier of the hierarchy wins on all three dimensions. That's why you nee
 
 | Mechanism | When It's Loaded | Who Triggers It |
 |-----------|-----------------|-----------------|
-| <span style="color:#ff8a8a">Root CLAUDE.md</span> | Always | Automatic |
-| <span style="color:#c9a0f0">Sub-dir CLAUDE.md</span> | Claude reads a file in that directory or below | Claude's file access |
-| <span style="color:#62dce8">Skill (claude-invoked)</span> | Claude decides the skill is valuable based on its description | Claude's judgment |
-| <span style="color:#62dce8">Skill (user-invoked)</span> | User runs a command (e.g., `/review-work-before-submit`) | User |
+| 🟥 Root CLAUDE.md | Always | Automatic |
+| 🟣 Sub-dir CLAUDE.md | Claude reads a file in that directory or below | Claude's file access |
+| 🔷 Skill (claude-invoked) | Claude decides the skill is valuable based on its description | Claude's judgment |
+| 🔷 Skill (user-invoked) | User runs a command (e.g., `/review-work-before-submit`) | User |
 
 ---
 
@@ -74,8 +74,8 @@ When a skill grows too large, audit each item: "Always needed when this skill is
 
 ## Key Tradeoff Summary
 
-| | <span style="color:#ffbe5c">Recall</span> | <span style="color:#7cacf8">Attention</span> | <span style="color:#5eeaa0">Context Load</span> | Design Effort |
+| | 🟡 Recall | 🔵 Attention | 🟢 Context Load | Design Effort |
 |--|--------|-----------|--------------|---------------|
-| <span style="color:#ff8a8a">**Root CLAUDE.md**</span> | Highest — always in context | Degrades with context size | High — always loaded | Low |
-| <span style="color:#c9a0f0">**Sub-dir CLAUDE.md**</span> | High — loaded on file access | Higher — less noise | Medium | Low |
-| <span style="color:#62dce8">**Skills**</span> | Lower — but user can manually invoke | Highest — fresh, focused | Lowest — on-demand | Highest |
+| 🟥 **Root CLAUDE.md** | Highest — always in context | Degrades with context size | High — always loaded | Low |
+| 🟣 **Sub-dir CLAUDE.md** | High — loaded on file access | Higher — less noise | Medium | Low |
+| 🔷 **Skills** | Lower — but user can manually invoke | Highest — fresh, focused | Lowest — on-demand | Highest |
