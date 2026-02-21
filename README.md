@@ -13,23 +13,31 @@ My current focus is AI Programming. I'm a Claude Code power-user, and active con
 
 ### Claude Code
 
-<details>
-<summary>4 issues filed — 3 fixed</summary>
-
 As an active contributor to Anthropic's Claude Code project, I've filed feature requests and submitted bug reports to improve the AI coding agent experience.
+
+<details>
+<summary>Feature requests implemented</summary>
+
+1. [#19541](https://github.com/anthropics/claude-code/issues/19541) — Per-terminal session affinity for --continue.
+`--continue` resumed the most recent session globally, breaking multi-terminal workflows — restarting in one terminal would pick up a different terminal's session. Filed a proposal with a terminal identifier priority table covering iTerm, Kitty, Windows Terminal, tmux, and others. Sessions now display a resume command with session ID on exit (e.g. `claude --resume <session-id>`), giving users explicit control over which session to continue.
+2. [#13412](https://github.com/anthropics/claude-code/issues/13412) — "Shell cwd was reset" message noise.
+Users working across multiple repositories from a central config repo saw this message after every Bash command run outside the project root, making output hard to read. Filed a request to make it suppressible. Fixed by @ltawfik.
+
+</details>
+
+<details>
+<summary>Bugs reported and fixed</summary>
 
 1. [#20409](https://github.com/anthropics/claude-code/issues/20409) — Silent plugin skill registration failure.
 Unknown fields in plugin.json caused skills to silently fail to register — the plugin appeared loaded but skills weren't discoverable, with no error surfaced. Filed a report with a disclosure principles framework and proposal for warning badges and /doctor integration. Fixed by @blois.
-2. [#19541](https://github.com/anthropics/claude-code/issues/19541) — Per-terminal session affinity for --continue.
-`--continue` resumed the most recent session globally, breaking multi-terminal workflows — restarting in one terminal would pick up a different terminal's session. Filed a proposal with a terminal identifier priority table covering iTerm, Kitty, Windows Terminal, tmux, and others. Sessions now display a resume command with session ID on exit (e.g. `claude --resume <session-id>`), giving users explicit control over which session to continue.
-3. [#13412](https://github.com/anthropics/claude-code/issues/13412) — "Shell cwd was reset" message noise.
-Users working across multiple repositories from a central config repo saw this message after every Bash command run outside the project root, making output hard to read. Filed a request to make it suppressible. Fixed by @ltawfik.
-4. [#12031](https://github.com/anthropics/claude-code/issues/12031) — PreToolUse hooks stripped AskUserQuestion answers.
+2. [#12031](https://github.com/anthropics/claude-code/issues/12031) — PreToolUse hooks stripped AskUserQuestion answers.
 Any active PreToolUse hook caused the user's selection to be silently dropped. Filed a detailed report with a testing matrix isolating the bug to PreToolUse specifically (PostToolUse and SessionStart were unaffected). Fixed in v2.0.76.
 
 </details>
 
 ### vLLM (High-throughput LLM Inference Engine)
+
+While working to get Gemma2, Gemma3, and other quantized models loading and running correctly in vLLM — particularly on Blackwell hardware (RTX 5090) — I traced and fixed a series of bugs in the GGUF backend: multi-process hangs, config mapping gaps, dtype conflicts, weight loading errors, and missing architecture support.
 
 <details>
 <summary>17 PRs — GGUF support, Blackwell compatibility, multi-process inference</summary>
