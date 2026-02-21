@@ -13,10 +13,6 @@ Every piece of information you give Claude Code can be evaluated on three axes:
 
 No single tier of the hierarchy wins on all three dimensions. That's why you need the hierarchy rather than putting everything in one place.
 
-The interactive diagram below walks through the full framework — the hierarchy, loading triggers, decision flows for where to place new information, and maintenance flows for when things grow too large:
-
-{% stackblitz github-x8wquybx view=preview %}
-
 ---
 
 ## The Hierarchy
@@ -44,9 +40,7 @@ The interactive diagram below walks through the full framework — the hierarchy
 
 Skills can contain reference documents that are conditionally loaded into context, adding further efficiency within the most efficient tier:
 
-- **Layer 1: Skill Description** *(cheap)* — Always visible to Claude for routing decisions
-- **Layer 2: Skill Content** *(moderate)* — Loaded when skill is invoked
-- **Layer 3: Referenced Documents** *(expensive, on-demand)* — Loaded only if Claude decides it's valuable
+![Progressive disclosure layers — Layer 1: Skill Description (cheap, always visible for routing), Layer 2: Skill Content (moderate, loaded on invocation), Layer 3: Referenced Documents (expensive, loaded on-demand)](https://kitaekatt.github.io/claude-code-information-hierarchy/images/progressive-disclosure.png)
 
 ---
 
@@ -54,9 +48,7 @@ Skills can contain reference documents that are conditionally loaded into contex
 
 When adding new information, ask:
 
-- Does Claude need this on **most interactions**? → Root CLAUDE.md
-- Does Claude need this to work with **most files in a specific directory**? → Sub-dir CLAUDE.md
-- Otherwise → Skill
+![Decision flow: Does Claude need this on most interactions? YES → Root CLAUDE.md. NO → Does Claude need this to work with most files in this directory? YES → Sub-dir CLAUDE.md. NO → Skill](https://kitaekatt.github.io/claude-code-information-hierarchy/images/decision-flow.png)
 
 ---
 
@@ -64,9 +56,7 @@ When adding new information, ask:
 
 When CLAUDE.md grows too large, audit each item: "Is this always needed?"
 
-- No, scoped to a directory → Sub-dir CLAUDE.md
-- No, scoped to a workflow → Skill
-- Yes → Keep in root
+![CLAUDE.md maintenance flow: CLAUDE.md grows too large → audit each item → NO directory → Sub-dir CLAUDE.md, NO workflow → Skill, YES → Keep in root](https://kitaekatt.github.io/claude-code-information-hierarchy/images/claudemd-maintenance.png)
 
 > Sub-dir CLAUDE.md files are loaded less often, so are lower priority to optimize.
 
@@ -76,8 +66,7 @@ When CLAUDE.md grows too large, audit each item: "Is this always needed?"
 
 When a skill grows too large, audit each item: "Always needed when this skill is invoked?"
 
-- No → Move to a referenced document (loaded on-demand)
-- Yes → Keep in skill content
+![Skill maintenance flow: Skill grows too large → audit each item → NO → Referenced document, YES → Keep in skill](https://kitaekatt.github.io/claude-code-information-hierarchy/images/skill-maintenance.png)
 
 ---
 
