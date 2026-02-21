@@ -6,8 +6,8 @@ My current focus is AI Programming. I'm a Claude Code power-user, and active con
 
 ## Current Focus
 
-- Games industry consultant (Amazon, Spryfox, Roboto Games) with a focus on improving developer workflows and backend services using AI
-- Building and improving LLM infrastructure—particularly GGUF model support, memory optimization, inference performance
+- Increasing developer productivity by creating AI-enhanced workflows.
+- Improving performance of locally hosted LLM infrastructure (VLLM), GGUF model support, memory optimization, inference performance.
 
 ## Articles
 
