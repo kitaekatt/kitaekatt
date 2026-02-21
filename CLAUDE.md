@@ -22,6 +22,16 @@ See `.claude/skills/profile-review/SKILL.md` for the full structural diagram and
 
 When `README.md` changes here, note that `kitaekatt.github.io` may need updating.
 
+## Update Process
+
+Before editing the contributions section of README.md, run the contribution review skill to catch new and changed items:
+
+```
+Skill: review-github-contributions
+```
+
+This scans GitHub for new PRs and issues across tracked repos (claude-code, vllm, transformers), presents unreviewed items one at a time for approval, and maintains a structured YAML database in `data/contributions/`. Reviewed entries are the source of truth for what belongs in the README.
+
 ## Editing Guidelines
 
 - The README uses GitHub-flavored markdown and renders as a GitHub profile page
