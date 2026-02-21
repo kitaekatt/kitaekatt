@@ -1,4 +1,14 @@
-articles: []
+articles:
+  - file: articles/mastering-cache-hits-in-claude-code.md
+    title: Mastering Cache Hits in Claude Code
+    devto_id: 3273842
+    devto_url: https://dev.to/kitaekatt/mastering-cache-hits-in-claude-code-5648
+    status: published
+  - file: articles/claude-code-information-hierarchy.md
+    title: The Claude Code Information Hierarchy
+    devto_id: 3273856
+    devto_url: https://dev.to/kitaekatt/the-claude-code-information-hierarchy-5b3o-temp-slug-2941549
+    status: draft
 # Example entry:
 # - file: articles/my-article.md
 #   title: My Article Title

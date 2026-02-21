@@ -40,7 +40,6 @@ Articles live in `articles/` and are tracked in `articles.yaml` at the repo root
 
 ```
 Write/edit articles/my-article.md
-  → grip articles/my-article.md       # browser preview at localhost:6419
   → "publish as draft"                # Claude POSTs via dev.to skill, records ID in articles.yaml
   → review at dev.to draft URL
   → "publish" / "update"              # Claude PUTs via dev.to skill, updates articles.yaml
@@ -59,8 +58,7 @@ The dev.to skill (vm0-ai/vm0-skills) handles all API calls via curl using `$DEVT
 1. Create account at https://dev.to
 2. Generate API key at `dev.to/settings/extensions`
 3. Add `export DEVTO_API_KEY="..."` to `~/.zshrc`
-4. `brew install grip`
-5. `pnpm dlx add-skill https://github.com/vm0-ai/vm0-skills/tree/HEAD/dev.to`
+4. `npx skills add vm0-ai/vm0-skills/dev.to --yes`
 
 ### Article template
 

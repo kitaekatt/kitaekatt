@@ -257,3 +257,71 @@ contributions:
   review_status: not-reviewed
   last_seen_updated: '2026-02-04T17:41:26Z'
   summary: ''
+- number: 23157
+  type: issue
+  title: Add arrow key navigation between expandable sections (ctrl+o)
+  status: open
+  review_status: not-reviewed
+  last_seen_updated: '2026-02-18T22:12:14Z'
+  summary: ''
+- number: 25086
+  type: issue
+  title: enabledPlugins in settings.local.json silently ignored unless key also exists
+    in settings.json
+  status: closed
+  review_status: not-reviewed
+  last_seen_updated: '2026-02-16T19:09:43Z'
+  summary: ''
+  state_reason: DUPLICATE
+- number: 26147
+  type: issue
+  title: 'Feature: Named plans for multi-problem workflows'
+  status: open
+  review_status: not-reviewed
+  last_seen_updated: '2026-02-20T17:34:55Z'
+  summary: ''
+- number: 26148
+  type: issue
+  title: 'Feature: Convert plan to task on ExitPlanMode'
+  status: open
+  review_status: not-reviewed
+  last_seen_updated: '2026-02-20T17:34:56Z'
+  summary: ''
+- number: 26149
+  type: issue
+  title: 'Feature: Plan/task affinity — tasks may have plans'
+  status: open
+  review_status: not-reviewed
+  last_seen_updated: '2026-02-20T17:34:55Z'
+  summary: ''
+- number: 26150
+  type: issue
+  title: enabledPlugins in settings.local.json silently ignored unless key also exists
+    in settings.json
+  status: closed
+  review_status: not-reviewed
+  last_seen_updated: '2026-02-20T09:17:08Z'
+  summary: ''
+  state_reason: DUPLICATE
+- number: 26152
+  type: issue
+  title: Retain user input after OAuth token expiration and re-login
+  status: open
+  review_status: not-reviewed
+  last_seen_updated: '2026-02-20T17:34:56Z'
+  summary: ''
+- number: 26721
+  type: issue
+  title: /bookmark command — set named cache breakpoints for cache-safe rewind
+  status: open
+  review_status: not-reviewed
+  last_seen_updated: '2026-02-19T00:06:55Z'
+  summary: ''
+- number: 27247
+  type: issue
+  title: enabledPlugins in settings.local.json silently ignored unless key also exists
+    in settings.json
+  status: open
+  review_status: not-reviewed
+  last_seen_updated: '2026-02-20T22:02:58Z'
+  summary: ''

@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "skills": {
+    "dev.to": {
+      "source": "vm0-ai/vm0-skills",
+      "sourceType": "github",
+      "computedHash": "5ba460982a5d47320ec9d57bc50fb8678a15dffeee95cea97092914623db839e"
+    }
+  }
+}

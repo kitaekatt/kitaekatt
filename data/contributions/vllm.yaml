@@ -84,7 +84,7 @@ contributions:
   type: pr
   title: '[BugFix] Lazy tokenizer init in StructuredOutputManager to prevent GGUF
     semaphore leak'
-  status: open
+  status: closed
   review_status: not-reviewed
   last_seen_updated: '2026-01-27T05:01:28Z'
   summary: ''
@@ -98,7 +98,7 @@ contributions:
 - number: 30411
   type: pr
   title: 'fix(gguf): Ensure Gemma2 configs have hidden_act for backward compatibility'
-  status: draft
+  status: open
   review_status: not-reviewed
   last_seen_updated: '2026-01-19T17:27:29Z'
   summary: ''
@@ -168,7 +168,7 @@ contributions:
 - number: 30699
   type: pr
   title: '[Bugfix] Skip missing parameters during GGUF Gemma2 weight loading'
-  status: draft
+  status: open
   review_status: not-reviewed
   last_seen_updated: '2026-01-19T17:27:51Z'
   summary: ''
@@ -185,4 +185,18 @@ contributions:
   status: draft
   review_status: not-reviewed
   last_seen_updated: '2026-01-14T07:44:27Z'
+  summary: ''
+- number: 33846
+  type: pr
+  title: '[Bugfix] Reduce Triton TILE_SIZE on Blackwell for large head_size with float32'
+  status: draft
+  review_status: not-reviewed
+  last_seen_updated: '2026-02-05T00:20:24Z'
+  summary: ''
+- number: 33847
+  type: pr
+  title: '[Bugfix] Lazy tokenizer init to prevent semaphore leak in multiprocess mode'
+  status: draft
+  review_status: not-reviewed
+  last_seen_updated: '2026-02-05T00:23:34Z'
   summary: ''
