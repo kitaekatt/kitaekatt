@@ -13,8 +13,8 @@ My current focus is AI Programming. I'm a Claude Code power-user, and active con
 
 Articles I've written on Claude Code and developer workflows.
 
-- [Mastering Cache Hits in Claude Code](https://dev.to/kitaekatt/mastering-cache-hits-in-claude-code-5648)
 - [The Claude Code Information Hierarchy](https://dev.to/kitaekatt/the-claude-code-information-hierarchy-5b3o-temp-slug-2941549)
+- [Mastering Cache Hits in Claude Code](https://dev.to/kitaekatt/mastering-cache-hits-in-claude-code-5648)
 
 ## Claude and Open Source Contributions
 
