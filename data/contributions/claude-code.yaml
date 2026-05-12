@@ -129,10 +129,11 @@ contributions:
   type: issue
   title: '[FEATURE] Real-time auto-refresh for Ctrl+O transcript view when monitoring
     background processes'
-  status: open
+  status: closed
   review_status: not-reviewed
   last_seen_updated: '2026-01-09T15:43:53Z'
   summary: ''
+  state_reason: NOT_PLANNED
 - number: 17139
   type: issue
   title: '[FEATURE] Clarify blocking vs non-blocking hook status in hook messages'
@@ -144,17 +145,19 @@ contributions:
 - number: 17716
   type: issue
   title: Retain user input after OAuth token expiration and re-login
-  status: open
+  status: closed
   review_status: not-reviewed
   last_seen_updated: '2026-01-12T15:48:23Z'
   summary: ''
+  state_reason: NOT_PLANNED
 - number: 18213
   type: issue
   title: 'Feature Request: Command Pre-execution Dependencies (pre_commands)'
-  status: open
+  status: closed
   review_status: not-reviewed
   last_seen_updated: '2026-01-14T20:27:15Z'
   summary: ''
+  state_reason: NOT_PLANNED
 - number: 18624
   type: issue
   title: 'Feature: Per-terminal session affinity for --continue'
@@ -166,10 +169,11 @@ contributions:
 - number: 18654
   type: issue
   title: '[FEATURE] User-configurable session variables accessible from hooks (CLAUDE_SESSION_VARS)'
-  status: open
+  status: closed
   review_status: not-reviewed
   last_seen_updated: '2026-01-16T19:35:34Z'
   summary: ''
+  state_reason: NOT_PLANNED
 - number: 18878
   type: issue
   title: 'Feature Request: Allow configuring or disabling ''clear context'' default
@@ -190,10 +194,11 @@ contributions:
 - number: 20157
   type: issue
   title: 'Feature Request: Better Hook Error Disclosure '
-  status: open
+  status: closed
   review_status: not-reviewed
   last_seen_updated: '2026-01-28T17:57:33Z'
   summary: ''
+  state_reason: NOT_PLANNED
 - number: 20409
   type: issue
   title: 'Issue: Silent skill loading failure in plugins, Feature Request: Plugin
@@ -206,25 +211,28 @@ contributions:
 - number: 20415
   type: issue
   title: Unknown fields in plugin.json break skill and command registration
-  status: open
+  status: closed
   review_status: not-reviewed
   last_seen_updated: '2026-01-24T02:57:43Z'
   summary: ''
+  state_reason: COMPLETED
 - number: 21504
   type: issue
   title: '[UX] "hook returned blocking error" label is redundant when hook provides
     complete disclosure'
-  status: open
+  status: closed
   review_status: not-reviewed
   last_seen_updated: '2026-01-28T17:56:21Z'
   summary: ''
+  state_reason: NOT_PLANNED
 - number: 21731
   type: issue
   title: 'Feature: Per-terminal session affinity for --continue'
-  status: open
+  status: closed
   review_status: not-reviewed
   last_seen_updated: '2026-01-29T18:04:10Z'
   summary: ''
+  state_reason: NOT_PLANNED
 - number: 22223
   type: issue
   title: Plugin hook Python subprocess appears to cache module state, causing stale
@@ -238,32 +246,36 @@ contributions:
   type: issue
   title: 'Plugin hooks: shared Python process caches sys.modules across tool calls,
     causing stale import errors'
-  status: open
+  status: closed
   review_status: not-reviewed
   last_seen_updated: '2026-02-04T15:04:49Z'
   summary: ''
+  state_reason: NOT_PLANNED
 - number: 23142
   type: issue
   title: User interrupt during streaming can freeze whitespace-only text block into
     history, causing persistent 400 errors
-  status: open
+  status: closed
   review_status: not-reviewed
   last_seen_updated: '2026-02-04T17:24:51Z'
   summary: ''
+  state_reason: COMPLETED
 - number: 23143
   type: issue
   title: Duplicate detection can auto-close both issues when they reference each other
-  status: open
+  status: closed
   review_status: not-reviewed
   last_seen_updated: '2026-02-04T17:41:26Z'
   summary: ''
+  state_reason: NOT_PLANNED
 - number: 23157
   type: issue
   title: Add arrow key navigation between expandable sections (ctrl+o)
-  status: open
+  status: closed
   review_status: not-reviewed
   last_seen_updated: '2026-02-18T22:12:14Z'
   summary: ''
+  state_reason: NOT_PLANNED
 - number: 25086
   type: issue
   title: enabledPlugins in settings.local.json silently ignored unless key also exists
@@ -276,24 +288,27 @@ contributions:
 - number: 26147
   type: issue
   title: 'Feature: Named plans for multi-problem workflows'
-  status: open
+  status: closed
   review_status: not-reviewed
   last_seen_updated: '2026-02-20T17:34:55Z'
   summary: ''
+  state_reason: NOT_PLANNED
 - number: 26148
   type: issue
   title: 'Feature: Convert plan to task on ExitPlanMode'
-  status: open
+  status: closed
   review_status: not-reviewed
   last_seen_updated: '2026-02-20T17:34:56Z'
   summary: ''
+  state_reason: NOT_PLANNED
 - number: 26149
   type: issue
   title: 'Feature: Plan/task affinity — tasks may have plans'
-  status: open
+  status: closed
   review_status: not-reviewed
   last_seen_updated: '2026-02-20T17:34:55Z'
   summary: ''
+  state_reason: NOT_PLANNED
 - number: 26150
   type: issue
   title: enabledPlugins in settings.local.json silently ignored unless key also exists
@@ -306,22 +321,111 @@ contributions:
 - number: 26152
   type: issue
   title: Retain user input after OAuth token expiration and re-login
-  status: open
+  status: closed
   review_status: not-reviewed
   last_seen_updated: '2026-02-20T17:34:56Z'
   summary: ''
+  state_reason: NOT_PLANNED
 - number: 26721
   type: issue
   title: /bookmark command — set named cache breakpoints for cache-safe rewind
-  status: open
+  status: closed
   review_status: not-reviewed
   last_seen_updated: '2026-02-19T00:06:55Z'
   summary: ''
+  state_reason: NOT_PLANNED
 - number: 27247
   type: issue
   title: enabledPlugins in settings.local.json silently ignored unless key also exists
     in settings.json
-  status: open
+  status: closed
   review_status: not-reviewed
   last_seen_updated: '2026-02-20T22:02:58Z'
   summary: ''
+  state_reason: NOT_PLANNED
+- number: 27996
+  type: issue
+  title: additionalDirectories with Unix-style paths don't work for Bash cd on Windows
+    (MINGW64)
+  status: closed
+  review_status: not-reviewed
+  last_seen_updated: '2026-03-07T14:16:33Z'
+  summary: ''
+  state_reason: DUPLICATE
+- number: 28796
+  type: issue
+  title: 'Feature: Display script output in client via CLAUDE_DISPLAY_SCRIPT_OUTPUT
+    environment variable'
+  status: closed
+  review_status: not-reviewed
+  last_seen_updated: '2026-04-05T14:23:51Z'
+  summary: ''
+  state_reason: NOT_PLANNED
+- number: 29863
+  type: issue
+  title: 'Remote control: permission check responses lost on client switch; stale
+    prompts queued across turns'
+  status: closed
+  review_status: not-reviewed
+  last_seen_updated: '2026-03-13T14:28:55Z'
+  summary: ''
+  state_reason: DUPLICATE
+- number: 30825
+  type: issue
+  title: SessionStart hooks fire twice on /resume, clobbering first invocation's output
+  status: closed
+  review_status: not-reviewed
+  last_seen_updated: '2026-03-16T14:39:57Z'
+  summary: ''
+  state_reason: DUPLICATE
+- number: 31625
+  type: issue
+  title: '[BUG] /plugin detail view shows errors from wrong marketplace when same
+    plugin name exists in multiple marketplaces'
+  status: closed
+  review_status: not-reviewed
+  last_seen_updated: '2026-03-18T14:45:11Z'
+  summary: ''
+  state_reason: DUPLICATE
+- number: 33653
+  type: issue
+  title: Pin plugin installs to git commit SHA via marketplace.json
+  status: closed
+  review_status: not-reviewed
+  last_seen_updated: '2026-03-24T14:40:34Z'
+  summary: ''
+  state_reason: DUPLICATE
+- number: 39440
+  type: issue
+  title: 'VS Code extension: Allow configuring CLI flags (e.g. research preview features
+    like --auto-permissions)'
+  status: open
+  review_status: not-reviewed
+  last_seen_updated: '2026-04-30T22:21:41Z'
+  summary: ''
+- number: 41164
+  type: issue
+  title: UI freezes on first prompt submission (Windows 11)
+  status: closed
+  review_status: not-reviewed
+  last_seen_updated: '2026-04-07T14:50:20Z'
+  summary: ''
+  state_reason: COMPLETED
+- number: 41183
+  type: issue
+  title: Significant input lag on first prompt submission in large project directories
+    (Windows 11)
+  status: closed
+  review_status: not-reviewed
+  last_seen_updated: '2026-04-12T14:24:53Z'
+  summary: ''
+  state_reason: DUPLICATE
+- number: 42737
+  type: issue
+  title: SendMessage tool unavailable without agent teams feature, breaking agent
+    resume
+  status: closed
+  review_status: not-reviewed
+  last_seen_updated: '2026-05-11T22:34:28Z'
+  summary: ''
+  state_reason: NOT_PLANNED

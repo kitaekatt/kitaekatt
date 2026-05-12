@@ -59,58 +59,26 @@ GGUF models on Blackwell GPUs (RTX 5090, SM 120+) produced incorrect output beca
 </details>
 
 <details>
-<summary>4 PRs open</summary>
+<summary>5 PRs open</summary>
 
-1. [#30409](https://github.com/vllm-project/vllm/pull/30409) — Lazy tokenizer init to prevent GGUF semaphore leak.
-Repeated GGUF model loading/unloading exhausted system semaphores due to eager tokenizer initialization in StructuredOutputManager. Fix defers tokenizer init until first use.
-
-2. [#30410](https://github.com/vllm-project/vllm/pull/30410) — Auto-select compatible dtype for GGUF on Blackwell.
+1. [#30410](https://github.com/vllm-project/vllm/pull/30410) — Auto-select compatible dtype for GGUF on Blackwell.
 Gemma2/Gemma3 GGUF models on Blackwell hit a dtype deadlock: float16 causes numerical instability in Gemma, bfloat16 causes precision issues with GGUF on Blackwell. Fix adds `_resolve_dtype_conflict()` to auto-select float32 when both are disallowed.
 
-3. [#30412](https://github.com/vllm-project/vllm/pull/30412) — Skip lm_head mapping for models with tied word embeddings.
+2. [#30412](https://github.com/vllm-project/vllm/pull/30412) — Skip lm_head mapping for models with tied word embeddings.
 GGUF loading failed with `RuntimeError: Failed to map GGUF parameters: ['lm_head.weight']` for models like Gemma2 that share weights between input embeddings and output projection. Fix adds lm_head.weight to sideload params when `tie_word_embeddings=True`.
 
-4. [#30434](https://github.com/vllm-project/vllm/pull/30434) — Use EOS token ID from GGUF metadata instead of HF tokenizer.
-Gemma 3 GGUF models never stopped generating — the model emitted \<end_of_turn\> (token 106) but vLLM waited for the HF tokenizer's EOS (token 1), resulting in repeated EOS tokens until max_tokens. Fix reads the correct EOS from GGUF metadata.
+3. [#30702](https://github.com/vllm-project/vllm/pull/30702) — Handle missing config.json in speculator probe for GGUF models.
+The speculator probe tried to load config.json before GGUF handling ran, failing at engine init. More targeted fix following reviewer feedback that Transformers already handles GGUF config extraction.
+
+4. [#33846](https://github.com/vllm-project/vllm/pull/33846) — Reduce Triton TILE_SIZE on Blackwell for large head_size with float32.
+Blackwell (SM 120) has a 101KB shared memory limit per block. Triton's default TILE_SIZE=32 with `head_size=256` and float32 needs ~117KB, crashing with `OutOfResources` on first inference. Fix detects Blackwell + float32 + head_size=256 and drops TILE_SIZE to 16 (~66KB), unblocking Gemma2/Gemma3 GGUF inference on RTX 5090 at 373 tok/s.
+
+5. [#37220](https://github.com/vllm-project/vllm/pull/37220) — Consolidate Gemma2/3 GGUF fixes for correctness on Blackwell.
+Single PR consolidating four related GGUF fixes per reviewer request: embedding `quant_config` so `GGUFEmbeddingMethod` is selected, EOS token extraction from GGUF metadata for HF blob paths, skipping missing parameters during weight loading, and selecting plain `RMSNorm` instead of `GemmaRMSNorm` for GGUF (llama.cpp bakes +1 into the weights, so `GemmaRMSNorm`'s own +1 caused double addition → gibberish). Validated on RTX 5090: 43.9% HumanEval, 66.5% IFEval on gemma-2-2b GGUF.
 
 </details>
 
-<details>
-<summary>10 PRs in progress</summary>
-
-1. [#30411](https://github.com/vllm-project/vllm/pull/30411) — Ensure Gemma2 configs have hidden_act for backward compatibility.
-Gemma2 GGUF loading hit `AttributeError: 'Gemma2Config' has no attribute 'hidden_act'` because Transformers uses `hidden_activation` while vLLM accesses `hidden_act` directly. Fix copies the value across.
-
-2. [#30413](https://github.com/vllm-project/vllm/pull/30413) — Add missing rotary positional embeddings to Nemotron-H attention layers.
-Nemotron-H models loaded successfully but generated corrupted output because the attention class had no RoPE initialization. Without positional information, attention scores were meaningless. Fix adds full rotary embedding support.
-
-3. [#30421](https://github.com/vllm-project/vllm/pull/30421) — Skip missing parameters during GGUF Gemma2 weight loading.
-GGUF loader yielded qweight_type metadata for all quantized tensors including embeddings, but VocabParallelEmbedding doesn't have those parameters, causing a KeyError. Fix adds a safety check matching the existing pattern in llama.py.
-
-4. [#30423](https://github.com/vllm-project/vllm/pull/30423) — Make GGUFMoEMethod.apply() parameters optional.
-GGUF MoE models (e.g., Qwen3-30B) failed because `GGUFMoEMethod.apply()` required `top_k` and `renormalize` arguments that were never passed by the caller and not used in the method body.
-
-5. [#30424](https://github.com/vllm-project/vllm/pull/30424) — Add quant_config to Gemma2 embedding layer for GGUF support.
-Gemma2 GGUF models loaded successfully but produced garbage output because the embedding layer lacked quant_config, causing `F.embedding()` to interpret quantized bytes as float values. Same bug previously fixed for DeepSeek in #12836.
-
-6. [#30427](https://github.com/vllm-project/vllm/pull/30427) — Extract attn_logit_softcapping from GGUF metadata.
-Gemma2 GGUF models produced garbage because FlashAttention used softcap=0 (disabled) without this parameter, causing numerical instability. The attention backends already supported softcap — this was a config mapping gap.
-
-7. [#30500](https://github.com/vllm-project/vllm/pull/30500) — Extract HF config from GGUF metadata for repos without config.json.
-GGUF repos like bartowski's caused vLLM to fail at model loading. Fix adds a GGUF config parser that constructs HuggingFace-compatible config from GGUF metadata fields.
-
-8. [#30699](https://github.com/vllm-project/vllm/pull/30699) — Skip missing parameters during GGUF Gemma2 weight loading.
-Targeted resubmission of #30421 fix — adds safety check in `Gemma2Model.load_weights()` to skip parameters not in params_dict.
-
-9. [#30702](https://github.com/vllm-project/vllm/pull/30702) — Handle missing config.json in speculator probe for GGUF models.
-The speculator probe tried to load config.json before GGUF handling ran, failing at engine init. More targeted fix than #30500, following reviewer feedback that Transformers already handles GGUF config extraction.
-
-10. [#31464](https://github.com/vllm-project/vllm/pull/31464) — Apply RMSNorm weight correction for Gemma2 GGUF models.
-Gemma2 GGUF models produced gibberish because llama.cpp adds 1 to RMSNorm weights during GGUF conversion, but vLLM expects original values. Fix subtracts 1 during loading, matching the correction already applied for Gemma3 in #26189. Tested on RTX 5090: coherent output, 40% MMLU accuracy, 344 tok/s.
-
-</details>
-
-**[Hugging Face Transformers](https://github.com/huggingface/transformers):** While debugging Gemma2/Gemma3 GGUF output quality in vLLM, I traced the root cause upstream — Transformers' GGUF loader wasn't mapping `attn_logit_softcapping` from GGUF metadata into the HuggingFace config, causing models to silently use the wrong default. [#42881](https://github.com/huggingface/transformers/pull/42881) adds the config mappings for both architectures; once merged, it replaces the workaround in vLLM [#30427](https://github.com/vllm-project/vllm/pull/30427).
+**[Hugging Face Transformers](https://github.com/huggingface/transformers):** While debugging Gemma2/Gemma3 GGUF output quality in vLLM, I traced the root cause upstream — Transformers' GGUF loader wasn't mapping `attn_logit_softcapping` from GGUF metadata into the HuggingFace config, causing models to silently use the wrong default. [#42881](https://github.com/huggingface/transformers/pull/42881) adds the config mappings for both architectures.
 
 ## Tech Stack
 
