@@ -16,6 +16,16 @@ Articles I've written on Claude Code and developer productivity.
 
 ## Claude and Open Source Contributions
 
+### Claude Plugins
+
+[**plugins-kit**](https://kitaekatt.github.io/plugins-kit/) — a Claude Code plugin marketplace focused on enabling richer, more powerful plugins to be deployed in a team environment. The core `bootstrap` plugin lets any plugin with a properly configured `bootstrap.json` auto-configure its own software and library dependencies (install missing binaries, Python packages, etc.) so contributors don't have to hand-set-up each tool. Includes games-industry focused plugins like `unreal-kit` and `p4-kit` that improve Claude's ability to work within common games-industry toolchains.
+
+- **bootstrap** — dependency management for plugins; any plugin with a `bootstrap.json` can declare and install what it needs.
+- **skills-kit** — a robust skill development framework with new skill features.
+- **unreal-kit** — makes it easier for Claude to work with Unreal.
+- **p4-kit** — local code review of Perforce changelists.
+- **awesome-kit** — a collection of awesome skills.
+
 ### Claude Code
 
 As an active contributor to Anthropic's Claude Code project, I've filed feature requests and submitted bug reports that have resulted in tangible improvements to the developer experience.
