@@ -10,7 +10,8 @@
 - 🗣️ **Built Mass Effect's conversation system** — now the industry standard for interactive dialogue
 
 ## What I'm Building
-Individual plugins for Claude Code — the deliverable is the plugin, not the marketplace. Part of **[plugins-kit](https://kitaekatt.github.io/plugins-kit/)**.
+Claude code plugins focused on managing enterprise claude repos, and enhancing claude's ability to act as a perforce and unreal developer.
+ **[plugins-kit](https://kitaekatt.github.io/plugins-kit/)**.
 
 - **bootstrap** — a dependency/provisioning engine every plugin rides on: declare your tools, venvs, git dependencies, marketplaces, and per-user config in a `bootstrap.json`, and bootstrap brings the environment into that state automatically at session start.
 - **p4-kit** — a Perforce-based code reviewer (multi-agent review of pending changelists).
