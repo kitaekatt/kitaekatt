@@ -11,7 +11,7 @@
 
 ## What I'm Building
 Claude code plugins focused on managing enterprise claude repos, and enhancing claude's ability to act as a perforce and unreal developer.
- **[plugins-kit](https://kitaekatt.github.io/plugins-kit/)**.
+ **[plugins-kit](https://github.com/kitaekatt/plugins-kit)** — [docs](https://kitaekatt.github.io/plugins-kit/) · [architecture](https://deepwiki.com/kitaekatt/plugins-kit/)
 
 - **bootstrap** — a dependency/provisioning engine every plugin rides on: declare your tools, venvs, git dependencies, marketplaces, and per-user config in a `bootstrap.json`, and bootstrap brings the environment into that state automatically at session start.
 - **p4-kit** — a Perforce-based code reviewer (multi-agent review of pending changelists).

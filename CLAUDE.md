@@ -18,9 +18,9 @@ See `.claude/skills/profile-review/SKILL.md` for the full structural diagram and
 
 ## Related Projects
 
-**`kitaekatt.github.io`** (`~/Dev/kitaekatt.github.io`) — The GitHub Pages site that renders at `https://kitaekatt.github.io`. It owns the front page presentation and all published articles. That project is responsible for staying in sync with `README.md` in this repo — how it achieves that is up to its own architecture (GitHub Action, manual sync, etc.).
+**`kitaekatt.github.io`** (`~/Dev/kitaekatt.github.io`) — The GitHub Pages site at `https://kitaekatt.github.io`. Its root `index.html` is a **deliberate redirect** to `github.com/kitaekatt`, which means **`README.md` in this repo IS the front page** visitors see — there is no separate front page to keep in sync, and no sync mechanism exists or is needed. The site's role is a rich-content vault (games, articles, interactive demos) that this README links *out* to. See that repo's `CLAUDE.md` for the full rationale.
 
-When `README.md` changes here, note that `kitaekatt.github.io` may need updating.
+Practical implications: a request to "change the front page" or "change index.html" almost always means editing `README.md` here. The only site-side follow-up a README change might need is when it links to new rich content that must be published there.
 
 ## Update Process
 
